@@ -1,0 +1,50 @@
+{
+  "author": "Piotr Borysowski",
+  "contributors": [
+    {
+      "name": "Michael Oblak",
+      "email": "m@sheetsu.com"
+    },
+    {
+      "name": "Chris Switalski",
+      "email": "chris@sheetdb.io"
+    }
+  ],
+  "name": "sheetdb-node",
+  "description": "Official SheetDB API bindings for Node.js",
+  "version": "0.0.12",
+  "homepage": "https://github.com/sheetdb/sheetdb-node",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sheetdb/sheetdb-node.git"
+  },
+  "keywords": [
+    "sheetdb",
+    "api",
+    "google spreadsheets",
+    "google spreadsheets api",
+    "spreadsheets",
+    "spreadsheets api"
+  ],
+  "scripts": {
+    "test": "mocha test/",
+    "nyan-test": "mocha test/ --reporter nyan"
+  },
+  "dependencies": {
+    "btoa": "^1.1.2",
+    "xhr2": "^0.1.4",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.2",
+    "xhr-mock": "^1.7.0"
+  },
+  "main": "index",
+  "engines": {
+    "node": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/sheetdb/sheetdb-node/issues"
+  },
+  "license": "ISC"
+}

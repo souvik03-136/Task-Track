@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev Track | Track and Plan Your Developement Process</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto Mono"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+
+    <style></style>
+    <link rel="shortcut icon" href="mainlogo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!--Main Container-->
+    <div class="maincontainer">
+      <div class="sidebar">
+        <!--Side Top bar for close minimise and maximise-->
+        <div class="sidetopbar">
+          <div class="close" onclick="closewindow() "></div>
+          <div class="minimise" onclick="minimisewindow()"></div>
+          <div class="maximise"></div>
+        </div>
+        <!--Intro Panel fir Notefy-->
+        <div class="introside">
+          <div class="introicon">
+            <img src="webtracker.png" alt="" width="55px" />
+            <span class="imagetextintro">Dev Track</span>
+          </div>
+        </div>
+        <div class="scrollingsidebar" id="scrollingsidebar">
+          <div class="insidescroll" id="insidescroll">
+            <!-- <div class="note1">
+              <div class="tagiconside">
+                <img
+                  src="important2.png"
+                  alt="Important"
+                  class="tagimageside"
+                />
+              </div>
+              <div class="titlesidecard">This is First Note</div>
+            </div> -->
+          </div>
+        </div>
+        <div class="clearbuttonsdivside">
+          <div class="profilename">
+            <img src="user.png" alt="" width="30px" />
+            <span id="username">Souvik Mahanta</span>
+          </div>
+          <div class="emailuser">souvikmahanta03@gmail.com</div>
+        </div>
+        <!--Create A note Button-->
+      </div>
+      <div class="mainpage">
+        <div class="maintopbar">
+          <div class="buttonssection">
+            <button
+              type="button"
+              class="button addbutton"
+              onclick="popupaddtask(),clearvalues()"
+            >
+              Add Task
+            </button>
+            <button
+              type="button"
+              class="button clearbutton"
+              onclick="clearall()"
+            >
+              Clear All
+            </button>
+          </div>
+        </div>
+
+        <!--main tasks section-->
+        <div class="mainnotessection" id="mainnotessection">
+          <!-- <div class="note1main">
+            <div class="firstsectionmain">
+              <div class="titlemaincard" id="titlemain">
+                This is Second Card
+              </div>
+              <div class="tagmainsection">
+                <div
+                  class="important tagsmark"
+                  id="important"
+                  onclick="imptagcolor()"
+                >
+                  IMP
+                </div>
+              </div>
+            </div>
+            <div class="secondsection">
+              Lorem, ipsum dolor sit amet consectetur adipisicing
+              elitRepudiandae nisi facere ratione! Ad, quae
+              veritatis?Repellendus nam alias ipsum reiciendis qui
+              deserunreprehenderit velit excepturi deleniti. Sit totam ipsa
+              dolor
+            </div>
+            <div class="thirdsection">
+              <div class="sourcemaincard">
+                <div class="sourcehead">Source</div>
+                <div class="sourcename">Abhishek Jain</div>
+              </div>
+              <div class="buttonssectionmain">
+                <img src="link.png" alt="" class="cardbuttonimages" />
+
+                <img src="delete.png" alt="" class="cardbuttonimages" />
+
+                <img src="edit.png" alt="" class="cardbuttonimages" />
+
+                <img
+                  src="completed.png"
+                  alt=""
+                  class="cardbuttonimages"
+                  onclick="completedtask()"
+                />
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!--Pop Up for Add Post-->
+    <div class="popupcontainer" id="popcontainer">
+      <!-- <form
+        method="post"
+        action="	https://sheetdb.io/api/v1/snbvykjgmstt7"
+        id="sheetdb-form"
+        class="mainform"
+      > -->
+      <div class="popupaddtask" id="addtaskpopup">
+        <div class="popuptobar">
+          <div class="buttonpopsection">
+            <div class="close" onclick="closepopup()"></div>
+            <div class="minimise"></div>
+            <div class="maximise"></div>
+          </div>
+        </div>
+        <!--Mainsection of popup-->
+
+        <div class="headingpop">Add A New Task</div>
+        <form
+          class="inputformpop"
+          method="post"
+          action="	https://sheetdb.io/api/v1/snbvykjgmstt7"
+          id="sheetdb-form"
+        >
+          <div class="ownernameemail">
+            <div class="input-group">
+              <input
+                required=""
+                type="text"
+                name="data[OwnerName]"
+                autocomplete="off"
+                class="input"
+                id="ownername"
+              />
+              <label class="user-label">Owner Name</label>
+            </div>
+            <div class="input-group">
+              <input
+                required=""
+                type="text"
+                name="data[OwnerEmail]"
+                autocomplete="off"
+                class="input"
+                id="owneremail"
+              />
+              <label class="user-label">Owner Email</label>
+            </div>
+          </div>
+
+          <div class="titleandsource">
+            <div class="input-group">
+              <input
+                required=""
+                type="text"
+                name="data[Title]"
+                autocomplete="off"
+                class="input"
+                id="titletask"
+              />
+              <label class="user-label">Title</label>
+            </div>
+            <div class="input-group">
+              <input
+                required=""
+                type="text"
+                name="data[SourceLink]"
+                autocomplete="off"
+                class="input"
+                id="sourcelink"
+              />
+              <label class="user-label">Source Link</label>
+            </div>
+          </div>
+
+          <div class="description">
+            <textarea
+              name="data[Description]"
+              id="descpop"
+              class="descpop"
+              placeholder="Enter Detailed Description or Source Code"
+            ></textarea>
+          </div>
+
+          <div class="tags">
+            <span class="taghead">Tags</span>
+            <div class="tagsselect">
+              <div
+                class="important tagsmark"
+                id="important"
+                onclick="imptagcolor()"
+              >
+                IMP
+              </div>
+              <div
+                class="primary tagsmark"
+                id="primary"
+                onclick="pritagcolor()"
+              >
+                PRI
+              </div>
+              <div
+                class="secondary tagsmark"
+                id="secondary"
+                onclick="sectagcolor()"
+              >
+                SEC
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="createbuttonpop">+</button>
+        </form>
+      </div>
+    </div>
+
+    <!--Display whole message Popup-->
+    <div class="popdisplaymessage" id="displaycontainer">
+      <div class="displaypopup" id="displaypop">
+        <div class="popuptobar">
+          <div class="buttonpopsection">
+            <div class="close" onclick="closepopupdisplay()"></div>
+            <div class="minimise"></div>
+            <div class="maximise"></div>
+          </div>
+        </div>
+        <div class="titlefull" style="scale: 0" id="fulltitle"></div>
+        <div class="mainbardisplaymessage">
+          <div class="titlebardisplaymessage">
+            <div class="titledisplay" id="displaytitle"></div>
+            <div class="tagdisplay tagsmark important">IMP</div>
+          </div>
+          <div class="descriptiondisplay" id="descdisplay"></div>
+          <div class="sourcedisplay">
+            <span id="sourcename"></span>
+
+            <span id="sourceemail" class="sourceemail"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      var form = document.getElementById('sheetdb-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(document.getElementById('sheetdb-form')),
+        })
+          .then((response) => response.json())
+          .then((html) => {
+            // you can put any JS code here
+            togetvalues();
+            createelementmain();
+            createelementside();
+            closepopup();
+          });
+      });
+    </script>
+  </body>
+</html>
