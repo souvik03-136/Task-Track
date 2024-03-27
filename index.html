@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dev Track | Track and Plan Your Developement Process</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto Mono"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins"
-      rel="stylesheet"
-    />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dev Track | Track and Plan Your Developement Process</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Roboto Mono"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Poppins"
+			rel="stylesheet"
+		/>
 
-    <style></style>
-    <link rel="shortcut icon" href="mainlogo.png" type="image/x-icon" />
-  </head>
-  <body>
-    <!--Main Container-->
-    <div class="maincontainer">
-      <div class="sidebar">
-        <!--Side Top bar for close minimise and maximise-->
-        <div class="sidetopbar">
-          <div class="close" onclick="closewindow() "></div>
-          <div class="minimise" onclick="minimisewindow()"></div>
-          <div class="maximise"></div>
-        </div>
-        <!--Intro Panel fir Notefy-->
-        <div class="introside">
-          <div class="introicon">
-            <img src="webtracker.png" alt="" width="55px" />
-            <span class="imagetextintro">Dev Track</span>
-          </div>
-        </div>
-        <div class="scrollingsidebar" id="scrollingsidebar">
-          <div class="insidescroll" id="insidescroll">
-            <!-- <div class="note1">
+		<style></style>
+		<link rel="shortcut icon" href="mainlogo.png" type="image/x-icon" />
+	</head>
+	<body>
+		<!--Main Container-->
+		<div class="maincontainer">
+			<div class="sidebar">
+				<!--Side Top bar for close minimise and maximise-->
+				<div class="sidetopbar">
+					<div class="close" onclick="closewindow() "></div>
+					<div class="minimise" onclick="minimisewindow()"></div>
+					<div class="maximise"></div>
+				</div>
+				<!--Intro Panel fir Notefy-->
+				<div class="introside">
+					<div class="introicon">
+						<img src="webtracker.png" alt="" width="55px" />
+						<span class="imagetextintro">Dev Track</span>
+					</div>
+				</div>
+				<div class="scrollingsidebar" id="scrollingsidebar">
+					<div class="insidescroll" id="insidescroll">
+						<!-- <div class="note1">
               <div class="tagiconside">
                 <img
                   src="important2.png"
@@ -46,40 +46,61 @@
               </div>
               <div class="titlesidecard">This is First Note</div>
             </div> -->
-          </div>
-        </div>
-        <div class="clearbuttonsdivside">
-          <div class="profilename">
-            <img src="user.png" alt="" width="30px" />
-            <span id="username">Souvik Mahanta</span>
-          </div>
-          <div class="emailuser">souvikmahanta03@gmail.com</div>
-        </div>
-        <!--Create A note Button-->
-      </div>
-      <div class="mainpage">
-        <div class="maintopbar">
-          <div class="buttonssection">
-            <button
-              type="button"
-              class="button addbutton"
-              onclick="popupaddtask(),clearvalues()"
-            >
-              Add Task
-            </button>
-            <button
-              type="button"
-              class="button clearbutton"
-              onclick="clearall()"
-            >
-              Clear All
-            </button>
-          </div>
-        </div>
+					</div>
+				</div>
+				<div class="clearbuttonsdivside">
+					<div class="profilename">
+						<img src="user.png" alt="" width="30px" />
+						<span id="username">Souvik Mahanta</span>
+					</div>
+					<div class="emailuser">souvikmahanta03@gmail.com</div>
+				</div>
+				<!--Create A note Button-->
+			</div>
+			<div class="mainpage">
+				<div class="maintopbar">
+					<div class="buttonssection">
+						<button
+							type="button"
+							class="button addbutton"
+							onclick="popupaddtask(),clearvalues()"
+						>
+							Add Task
+						</button>
+						<button
+							type="button"
+							class="button clearbutton"
+							onclick="clearall()"
+						>
+							Clear All
+						</button>
+						<button
+							type="button"
+							class="button"
+							onclick="getAllTask()"
+						>
+							Get
+						</button>
+						<button
+							type="button"
+							class="button"
+							onclick="deleteAllTask()"
+						>
+							Delete
+						</button>
+						<button
+							type="button"
+							class="button"
+							onclick="updateTask()"
+						>
+							Update
+						</button>
+					</div>
+				</div>
 
-        <!--main tasks section-->
-        <div class="mainnotessection" id="mainnotessection">
-          <!-- <div class="note1main">
+				<!--main tasks section-->
+				<div class="mainnotessection" id="mainnotessection">
+					<!-- <div class="note1main">
             <div class="firstsectionmain">
               <div class="titlemaincard" id="titlemain">
                 This is Second Card
@@ -122,169 +143,238 @@
               </div>
             </div>
           </div> -->
-        </div>
-      </div>
-    </div>
+				</div>
+			</div>
+		</div>
 
-    <!--Pop Up for Add Post-->
-    <div class="popupcontainer" id="popcontainer">
-      <!-- <form
-        method="post"
-        action="	https://sheetdb.io/api/v1/snbvykjgmstt7"
+		<!--Pop Up for Add Post-->
+		<div class="popupcontainer" id="popcontainer">
+			<form
         id="sheetdb-form"
         class="mainform"
-      > -->
-      <div class="popupaddtask" id="addtaskpopup">
-        <div class="popuptobar">
-          <div class="buttonpopsection">
-            <div class="close" onclick="closepopup()"></div>
-            <div class="minimise"></div>
-            <div class="maximise"></div>
-          </div>
-        </div>
-        <!--Mainsection of popup-->
+      >
+			<div class="popupaddtask" id="addtaskpopup">
+				<div class="popuptobar">
+					<div class="buttonpopsection">
+						<div class="close" onclick="closepopup()"></div>
+						<div class="minimise"></div>
+						<div class="maximise"></div>
+					</div>
+				</div>
+				<!--Mainsection of popup-->
 
-        <div class="headingpop">Add A New Task</div>
-        <form
-          class="inputformpop"
-          method="post"
-          action="	https://sheetdb.io/api/v1/snbvykjgmstt7"
-          id="sheetdb-form"
-        >
-          <div class="ownernameemail">
-            <div class="input-group">
-              <input
-                required=""
-                type="text"
-                name="data[OwnerName]"
-                autocomplete="off"
-                class="input"
-                id="ownername"
-              />
-              <label class="user-label">Owner Name</label>
-            </div>
-            <div class="input-group">
-              <input
-                required=""
-                type="text"
-                name="data[OwnerEmail]"
-                autocomplete="off"
-                class="input"
-                id="owneremail"
-              />
-              <label class="user-label">Owner Email</label>
-            </div>
-          </div>
+				<div class="headingpop">Add A New Task</div>
+				<form class="inputformpop" action="addTask()" id="sheetdb-form">
+					<div class="ownernameemail">
+						<div class="input-group">
+							<input
+								required=""
+								type="text"
+								name="owner"
+								autocomplete="off"
+								class="input"
+								id="ownername"
+							/>
+							<label class="user-label">Owner Name</label>
+						</div>
+						<div class="input-group">
+							<input
+								required=""
+								type="text"
+								name="email"
+								autocomplete="off"
+								class="input"
+								id="owneremail"
+							/>
+							<label class="user-label">Owner Email</label>
+						</div>
+					</div>
 
-          <div class="titleandsource">
-            <div class="input-group">
-              <input
-                required=""
-                type="text"
-                name="data[Title]"
-                autocomplete="off"
-                class="input"
-                id="titletask"
-              />
-              <label class="user-label">Title</label>
-            </div>
-            <div class="input-group">
-              <input
-                required=""
-                type="text"
-                name="data[SourceLink]"
-                autocomplete="off"
-                class="input"
-                id="sourcelink"
-              />
-              <label class="user-label">Source Link</label>
-            </div>
-          </div>
+					<div class="titleandsource">
+						<div class="input-group">
+							<input
+								required=""
+								type="text"
+								name="title"
+								autocomplete="off"
+								class="input"
+								id="titletask"
+							/>
+							<label class="user-label">Title</label>
+						</div>
+						<div class="input-group">
+							<input
+								required=""
+								type="text"
+								name="sourceLink"
+								autocomplete="off"
+								class="input"
+								id="sourcelink"
+							/>
+							<label class="user-label">Source Link</label>
+						</div>
+					</div>
 
-          <div class="description">
-            <textarea
-              name="data[Description]"
-              id="descpop"
-              class="descpop"
-              placeholder="Enter Detailed Description or Source Code"
-            ></textarea>
-          </div>
+					<div class="description">
+						<textarea
+							name="description"
+							id="descpop"
+							class="descpop"
+							placeholder="Enter Detailed Description or Source Code"
+						></textarea>
+					</div>
 
-          <div class="tags">
-            <span class="taghead">Tags</span>
-            <div class="tagsselect">
-              <div
-                class="important tagsmark"
-                id="important"
-                onclick="imptagcolor()"
-              >
-                IMP
-              </div>
-              <div
-                class="primary tagsmark"
-                id="primary"
-                onclick="pritagcolor()"
-              >
-                PRI
-              </div>
-              <div
-                class="secondary tagsmark"
-                id="secondary"
-                onclick="sectagcolor()"
-              >
-                SEC
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="createbuttonpop">+</button>
-        </form>
-      </div>
-    </div>
+					<div class="tags">
+						<span class="taghead">Tags</span>
+						<div class="tagsselect">
+							<div
+								class="important tagsmark"
+								id="important"
+								onclick="imptagcolor()"
+							>
+								IMP
+							</div>
+							<div
+								class="primary tagsmark"
+								id="primary"
+								onclick="pritagcolor()"
+							>
+								PRI
+							</div>
+							<div
+								class="secondary tagsmark"
+								id="secondary"
+								onclick="sectagcolor()"
+							>
+								SEC
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="createbuttonpop">+</button>
+				</form>
+			</div>
+		</div>
 
-    <!--Display whole message Popup-->
-    <div class="popdisplaymessage" id="displaycontainer">
-      <div class="displaypopup" id="displaypop">
-        <div class="popuptobar">
-          <div class="buttonpopsection">
-            <div class="close" onclick="closepopupdisplay()"></div>
-            <div class="minimise"></div>
-            <div class="maximise"></div>
-          </div>
-        </div>
-        <div class="titlefull" style="scale: 0" id="fulltitle"></div>
-        <div class="mainbardisplaymessage">
-          <div class="titlebardisplaymessage">
-            <div class="titledisplay" id="displaytitle"></div>
-            <div class="tagdisplay tagsmark important">IMP</div>
-          </div>
-          <div class="descriptiondisplay" id="descdisplay"></div>
-          <div class="sourcedisplay">
-            <span id="sourcename"></span>
+		<!--Display whole message Popup-->
+		<div class="popdisplaymessage" id="displaycontainer">
+			<div class="displaypopup" id="displaypop">
+				<div class="popuptobar">
+					<div class="buttonpopsection">
+						<div class="close" onclick="closepopupdisplay()"></div>
+						<div class="minimise"></div>
+						<div class="maximise"></div>
+					</div>
+				</div>
+				<div class="titlefull" style="scale: 0" id="fulltitle"></div>
+				<div class="mainbardisplaymessage">
+					<div class="titlebardisplaymessage">
+						<div class="titledisplay" id="displaytitle"></div>
+						<div class="tagdisplay tagsmark important">IMP</div>
+					</div>
+					<div class="descriptiondisplay" id="descdisplay"></div>
+					<div class="sourcedisplay">
+						<span id="sourcename"></span>
 
-            <span id="sourceemail" class="sourceemail"></span>
-          </div>
-        </div>
-      </div>
-    </div>
+						<span id="sourceemail" class="sourceemail"></span>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <script src="script.js"></script>
-    <script>
-      var form = document.getElementById('sheetdb-form');
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        fetch(form.action, {
-          method: 'POST',
-          body: new FormData(document.getElementById('sheetdb-form')),
-        })
-          .then((response) => response.json())
-          .then((html) => {
-            // you can put any JS code here
-            togetvalues();
-            createelementmain();
-            createelementside();
-            closepopup();
-          });
-      });
-    </script>
-  </body>
+		<script src="script.js"></script>
+		<script>
+			const myHeaders = new Headers();
+			myHeaders.append("Content-Type", "application/json");
+
+			document.getElementById('sheetdb-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+				addTask();
+});
+			function addTask() {
+				const raw = {
+				};
+				const formData = new FormData(document.getElementById("sheetdb-form"));
+				formData.forEach((value, key) => {
+					raw[key] = value;
+				});
+				const requestOptions = {
+					method: "POST",
+					headers: myHeaders,
+					body: JSON.stringify(raw),
+				};
+
+				fetch("http://localhost:3000/create", requestOptions)
+					.then((response) => response.text())
+					.then((result) => console.log(result))
+					.catch((error) => console.error(error));
+			}
+
+			async function getAllTask() {
+				const req = await fetch("http://localhost:3000/", {
+					method: "GET",
+					headers: myHeaders,
+				});
+
+				if(req.ok) {
+					const res = await req.json()
+					console.log(res);
+				}
+
+				if(!req.ok) {
+					console.error("Error ", req.statusText)
+			}
+			}
+
+			async function updateTask() {
+				const req = await fetch("http://localhost:3000/update/6604035ab2fd3dc7c0b5b034", {
+					method: "PUT",
+					headers: myHeaders,
+					body: JSON.stringify({
+						title: "Updated Title"
+					})
+				})
+
+				if(req.ok) {
+					const res = await req.json()
+					console.log(res);
+				}
+
+				if(!req.ok) {
+					console.error("Error ", req.statusText)
+			}
+			}
+
+			async function deleteTask() {
+				const req = await fetch("http://localhost:3000/delete/6604035ab2fd3dc7c0b5b034", {
+					method: "PUT",
+					headers: myHeaders,
+				})
+
+				if(req.ok) {
+					const res = await req.json()
+					console.log(res);
+				}
+
+				if(!req.ok) {
+					console.error("Error ", req.statusText)
+			}
+			}
+
+			async function deleteAllTask() {
+				const req = await fetch("http://localhost:3000/delete-all", {
+					method: "DELETE",
+					headers: myHeaders,
+				});
+
+				if(req.ok) {
+					const res = await req.json()
+					console.log(res);
+				}
+
+				if(!req.ok) {
+					console.error("Error ", req.statusText)
+			}
+			}
+		</script>
+	</body>
 </html>
